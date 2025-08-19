@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monthly Expense Indicators</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Monthly Expense Indicators</h1>
+      <p class="subtitle">Add your expenses, then click Calculate.</p>
+    </header>
+
+    <section class="input-section">
+      <div class="add-form" role="form" aria-label="Add new expense">
+        <label>
+          <span>Category</span>
+          <input id="input-category" type="text" placeholder="e.g., Groceries" />
+        </label>
+        <label>
+          <span>Amount ($)</span>
+          <input id="input-amount" type="text" inputmode="decimal" placeholder="e.g., 15,000" />
+        </label>
+        <button id="btn-add" class="btn primary" type="button">Add Expense</button>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <table class="expenses-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount ($)</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="expenses-tbody"></tbody>
+      </table>
+      <div class="table-actions">
+        <button id="btn-calc" class="btn success" type="button">Calculate</button>
+        <button id="btn-clear" class="btn" type="button">Clear All</button>
+        <button id="btn-sample" class="btn" type="button">Load Sample Data</button>
+      </div>
+    </section>
+
+    <section class="results" aria-live="polite">
+      <div class="cards">
+        <div class="card">
+          <div class="card-title">Total Expenses</div>
+          <div id="result-total" class="card-value">$0</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Average Daily Expense (30 days)</div>
+          <div id="result-average" class="card-value">$0</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Top 3 Expenses</div>
+          <ol id="result-top3" class="card-list"></ol>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>Assumes 30 days per month. Amounts are in USD.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
